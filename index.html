@@ -1,74 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="bn">
 <head>
-  <title>RDX LALA</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: black;
-      color: #00ffcc;
-      font-family: monospace;
-      text-align: center;
-    }
-
-    h1 {
-      margin-top: 50px;
-      font-size: 35px;
-      color: #00ffcc;
-      text-shadow: 0 0 10px #00ffcc;
-    }
-
-    p {
-      color: #aaa;
-    }
-
-    .box {
-      margin-top: 40px;
-    }
-
-    a {
-      display: block;
-      margin: 15px auto;
-      width: 200px;
-      padding: 12px;
-      border: 1px solid #00ffcc;
-      color: #00ffcc;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: 0.3s;
-    }
-
-    a:hover {
-      background: #00ffcc;
-      color: black;
-      box-shadow: 0 0 15px #00ffcc;
-    }
-
-    .glow {
-      animation: glow 1.5s infinite alternate;
-    }
-
-    @keyframes glow {
-      from { text-shadow: 0 0 5px #00ffcc; }
-      to { text-shadow: 0 0 20px #00ffcc; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RDX LALA - FF Long Bio Generator</title>
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid #ff4b2b;
+            box-shadow: 0 0 20px #ff4b2b;
+        }
+        h1 { color: #ff4b2b; text-shadow: 2px 2px #000; }
+        textarea {
+            width: 90%;
+            height: 100px;
+            background: #262626;
+            color: #fff;
+            border: 1px solid #ff4b2b;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .btn {
+            background: linear-gradient(45deg, #ff4b2b, #ff416c);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+        .btn:hover { transform: scale(1.1); box-shadow: 0 0 15px #ff4b2b; }
+        .result-box {
+            margin-top: 20px;
+            padding: 15px;
+            background: #333;
+            border-radius: 8px;
+            word-wrap: break-word;
+        }
+    </style>
 </head>
-
 <body>
 
-<h1 class="glow">RDX LALA 😎</h1>
-<p>Hacker Mode Activated...</p>
+<div class="container">
+    <h1>RDX LALA Bio Tool</h1>
+    <p>আপনার বায়ো লিখুন (গেস্ট আইডির জন্য):</p>
+    <textarea id="userInput" placeholder="এখানে আপনার নাম বা টেক্সট লিখুন..."></textarea>
+    
+    <button class="btn" onclick="generateBio()">Generate Long Bio</button>
 
-<div class="box">
-
-<a href="https://www.facebook.com/LxChanchal100">📘 Facebook</a>
-<a href="https://www.tiktok.com/@rdx_lala1?_r=1&_t=ZS-95mp1k77vWr">🎵 TikTok</a>
-<a href="https://www.tiktok.com/@lalagamer10k?_r=1&_t=ZS-95mp6r0FT2w">🎵 TikTok</a>
-<a href="https://www.youtube.com/@LaLagamer100">▶️ YouTube</a>
-
+    <div class="result-box" id="resultArea">
+        ফলাফল এখানে দেখা যাবে...
+    </div>
+    <button class="btn" onclick="copyText()">Copy Bio</button>
 </div>
+
+<script>
+    function generateBio() {
+        let input = document.getElementById('userInput').value;
+        // লং বায়ো ট্রিক কোড (বোল্ড এবং কালার ডিফল্ট)
+        let formattedBio = "[b][c][FF0000]" + input + " ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ"; 
+        document.getElementById('resultArea').innerText = formattedBio;
+    }
+
+    function copyText() {
+        let text = document.getElementById('resultArea').innerText;
+        navigator.clipboard.writeText(text);
+        alert("বায়ো কপি হয়েছে!");
+    }
+</script>
 
 </body>
 </html>
